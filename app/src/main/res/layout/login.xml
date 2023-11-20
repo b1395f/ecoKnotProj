@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="63dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="8dp"
+                android:src="@drawable/logo_temp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="16dp"
+                android:text="EcoKnot"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    <EditText
+        android:id="@+id/usernameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Username"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/forgotUsernameButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Forgot Username"
+        android:layout_marginStart="8dp"
+        android:layout_gravity="end"/>
+
+    <EditText
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Password"
+        android:layout_marginBottom="12dp"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/forgotPasswordButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Forgot Password"
+        android:layout_marginStart="8dp"
+        android:layout_gravity="end"/>
+
+    <Button
+        android:id="@+id/signInButton"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:text="Sign In"/>
+
+
+
+</LinearLayout>
