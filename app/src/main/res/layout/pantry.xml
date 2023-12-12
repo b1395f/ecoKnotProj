@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -31,80 +32,50 @@
             android:onClick="toggleMenu"/>
     </LinearLayout>
 
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headerLayout"
+        android:background="?attr/colorPrimary"
+        app:tabMode="fixed"
+        app:tabGravity="fill"
+        app:tabIndicatorHeight="3dp"
+        app:tabSelectedTextColor="@android:color/white"
+        app:tabTextColor="@android:color/darker_gray">
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <ListView
+        android:id="@+id/foodInventoryListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabLayout"
+        android:layout_above="@id/bottomMenu" />
+
+    <ListView
+        android:id="@+id/recipesListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/tabLayout"
+        android:layout_above="@id/bottomMenu"
+        android:visibility="gone" />
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/headerLayout"
+        android:layout_below="@id/tabLayout"
         android:layout_above="@id/bottomMenu">
 
         <LinearLayout
+            android:id="@+id/homeFeedContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="26dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginBottom="16dp"
-                android:text="Add a Recipe"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-
-            <EditText
-                android:id="@+id/recipeTitleText"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:hint="Recipe Name"
-                android:minLines="1"
-                android:gravity="start|top"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/border_background"/>
-
-            <EditText
-                android:id="@+id/recipeText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter your recipe here"
-                android:inputType="textMultiLine"
-                android:minLines="15"
-                android:gravity="start|top"
-                android:layout_marginBottom="16dp"
-                android:background="@drawable/border_background"/>
-
-            <EditText
-                android:id="@+id/recipeTags"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter #RecipeHashtags"
-                android:minLines="1"
-                android:gravity="start|top"
-                android:layout_marginBottom="16dp"/>
-
-            <Button
-                android:id="@+id/addRecipeButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:text="Add" />
-
-            <Button
-                android:id="@+id/cameraButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Camera"
-                android:layout_toEndOf="@id/addRecipeButton"/>
-
-            <androidx.camera.view.PreviewView
-                android:id="@+id/previewView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@id/cameraButton"/>
 
         </LinearLayout>
+
     </ScrollView>
 
     <LinearLayout
@@ -183,10 +154,6 @@
             android:layout_height="wrap_content"
             android:text="Settings"
             android:onClick="onMenuItemClick"/>
-
-
     </RelativeLayout>
-
-
 
 </RelativeLayout>

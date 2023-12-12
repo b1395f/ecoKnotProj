@@ -31,23 +31,52 @@
             android:onClick="toggleMenu"/>
     </LinearLayout>
 
-    <EditText
-        android:id="@+id/searchBar"
+    <RelativeLayout
+        android:id="@+id/profileSection"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/headerLayout"
-        android:layout_marginTop="8dp"
-        android:hint="Search"
-        android:inputType="none"/>
+        android:layout_marginTop="8dp">
 
+        <ImageView
+            android:id="@+id/profilePhoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_margin="8dp"
+            android:src="@drawable/profile"
+            android:scaleType="centerCrop"/>
 
+        <TextView
+            android:id="@+id/usernameHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/profilePhoto"
+            android:layout_toEndOf="@id/profilePhoto"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="JohnDoe"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/biography"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/usernameHeader"
+            android:layout_toRightOf="@id/profilePhoto"
+            android:layout_toEndOf="@id/profilePhoto"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="[User biography...]"
+            android:textSize="16sp"/>
+    </RelativeLayout>
 
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@id/bottomMenu"
-        android:layout_below="@id/searchBar">
+        android:layout_below="@id/profileSection">
 
         <GridLayout
             android:id="@+id/gridLayout"
@@ -63,13 +92,7 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="8dp"
-                android:src="@drawable/sample4" />
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_margin="8dp"
-                android:src="@drawable/sample4" />
+                android:src="@drawable/sample1" />
 
             <ImageView
                 android:layout_width="150dp"
@@ -81,19 +104,19 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="8dp"
+                android:src="@drawable/sample4" />
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/sample4" />
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
                 android:src="@drawable/sample1" />
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_margin="8dp"
-                android:src="@drawable/sample4" />
-
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_margin="8dp"
-                android:src="@drawable/sample4" />
 
             <ImageView
                 android:layout_width="150dp"
@@ -105,11 +128,43 @@
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_margin="8dp"
-                android:src="@drawable/sample1" />
+                android:src="@drawable/sample4" />
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_margin="8dp"
+                android:src="@drawable/sample4" />
 
 
         </GridLayout>
     </ScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/sideMenu"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/darker_gray"
+        android:visibility="gone">
+
+        <Button
+            android:id="@+id/menuOption1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Option 1"
+            android:onClick="onMenuItemClick"/>
+
+        <Button
+            android:id="@+id/menuOption2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:onClick="onMenuItemClick"/>
+    </RelativeLayout>
+
+
 
     <LinearLayout
         android:id="@+id/bottomMenu"
@@ -166,27 +221,7 @@
             android:gravity="center"/>
     </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/sideMenu"
-        android:layout_width="200dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentStart="true"
-        android:background="@android:color/darker_gray"
-        android:visibility="gone">
 
-        <Button
-            android:id="@+id/menuOption1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Option 1"
-            android:onClick="onMenuItemClick"/>
 
-        <Button
-            android:id="@+id/menuOption2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Settings"
-            android:onClick="onMenuItemClick"/>
-    </RelativeLayout>
 
 </RelativeLayout>
