@@ -33,7 +33,6 @@ public class ForgotUserActivity extends AppCompatActivity {
                     messageTextView.setText("Please enter your email. \nEmail box cannot be empty");
                     messageTextView.setTextColor(Color.RED);
                 } else {
-                    // Perform the action you need, e.g., send reset email
                     String message = "We've sent a reset email to " + userEmail;
                     messageTextView.setText(message);
                     messageTextView.setTextColor(Color.GREEN);
