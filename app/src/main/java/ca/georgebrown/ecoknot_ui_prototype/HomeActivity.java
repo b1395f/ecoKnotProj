@@ -73,6 +73,26 @@ public class HomeActivity extends AppCompatActivity {
             }
         });
 
+        Button pantryButton = findViewById(R.id.pantryButton);
+
+        pantryButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, PantryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button profileButton = findViewById(R.id.profileButton);
+
+        profileButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(HomeActivity.this, ProfileActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void toggleMenu() {
